@@ -44,9 +44,9 @@ void AddNodeintoList(list *mylist , int number_node) {
     for (int i = 0; i < number_node; i++) {
 		node *temp_node = InitNode();
 		if ( EnterDataNode(temp_node) == 1) {
-            free(temp_node);
-            continue;
-        }
+            		free(temp_node);
+            		continue;
+        	}
 		AddNode(mylist, temp_node);
 	}
 }
