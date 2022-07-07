@@ -2,31 +2,28 @@
 
 int main()
 {
-	NODE node;
-	list list1;
-	InitList(&list1);
-	int n;
-	printf("-Number Node of List1: ");
-	scanf("%d", &n);
-	fflush(stdin);
-	for (int i = 0; i < n; i++)
-	{
-		printf("Enter data for Node[%d] \n", i);
-		;
-		EnterDataNode(&node);
-		NODE *p = InitNode(node);
-		AddNodeintoList(&list1, p);
-	}
-	printf("-Danh sach lien ket don cua ban la :\n");
-	PrintList(list1);
-	FindList(list1, "Viet dz");
-    printf("-Thay doi data nguoi ban muon: \n");
-	ChangeNode(list1, "Viet dz");
-    printf("-Danh sach lien ket don cua ban sau khi thay doi la :\n");
-	PrintList(list1);
-    printf("-Nguoi ban muon xoa: ");
-	DeleteNode(&list1, "Viet dz", node);
-	printf("-Danh sach lien ket don cua ban sau khi thay doi la :\n");
-	PrintList(list1);
+	int number_node = -1;
+	list mylist;
+
+	InitList(&mylist);
+	printf("Enter number node: ");
+	do  {
+		scanf("%d", &number_node);
+	} while (number_node < 0);
+	
+	AddNodeintoList(&mylist, number_node);
+
+	PrintList(mylist);
+	ChangeNode(mylist, 1);
+	PrintList(mylist);
+	DeleteNode(&mylist, 8);
+	DeleteNode(&mylist, 1);
+	DeleteNode(&mylist, 3);
+	PrintList(mylist);
+	AddNodeintoList(&mylist, 2);
+	DeleteNode(&mylist, 4);
+	PrintList(mylist);
+
 	return 0;
+
 }
